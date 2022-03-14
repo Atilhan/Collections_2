@@ -16,10 +16,13 @@ for i in colors:
         empty_list.append(i + " " + str(x))
 random.shuffle(empty_list)
 
-for e in range(1,8):
-    print(f"Card {e}: {empty_list[e]}")
-    empty_list.pop(e)
 print(empty_list)
+
+for e in range(1,8):
+    index = random.randint(0,len(empty_list)-1)
+    card = (empty_list.pop(index))
+    print(f"Card {e}: {card}")
+print("\n[DECK]",empty_list)
 
 
 
