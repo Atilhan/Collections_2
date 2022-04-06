@@ -11,6 +11,7 @@ color_values = [2,3,4,5,6,7,8,9,10, 'vrouw' , 'heer', 'boer' , 'aas']
 
 empty_list = []
 
+
 for i in colors:
     for x in color_values:
         empty_list.append(i + " " + str(x))
