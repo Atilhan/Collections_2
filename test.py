@@ -44,12 +44,52 @@
 
 # print(result)
 
-x = 0
-while x <= 18:
-    x = x + 3
+# x = 0
+# while x <= 18:
+#     print(x)
+#     x += 7
     
-print(x)
+# print(x)
+
+
+# tables = input("Chose your table number")
+
+# for i in range(1,11):
+#     print(i,"x", tables, "=", i*tables)
+
+
+# numbers = int(input('Insert table numbers !: '))
+# for loop in range(1,11):
+#     print(loop,"+", numbers, "=", loop*numbers)
+
+# split = int(input('Insert numbers here !: '))
+# for loop_1 in range(1,11):
+#     print(loop_1, "/", split, "=", loop_1/split)
+
+# import pyautogui,time,mouse
+
+
+# # for i in range(10):
+# #     time.sleep(2)
+# #     pyautogui.leftClick()
+
+
+# mouse.get_position()
+# # mouse.drag(0,0,100,100,duration = 0.9)
+# mouse.move(100,100,absolute = False,duration = 0.8)
+# mouse.click('left')
 
 
 
+import re
 
+vowels = 'aeiouAEIOU'
+
+given_str = input("Enter a string : ")
+final_str = given_str
+
+for c in given_str:
+    if c in vowels:
+        final_str = final_str.replace(c,"")
+
+print(final_str)

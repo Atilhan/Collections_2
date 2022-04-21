@@ -16,24 +16,9 @@ def scoreboard():
     print("Rood Lijst :", rood_r)
     print("Wit lijst  :", wit_w)
 
-
-
-
-# def dobbelsteen(aantal):
-# dobbelsteen_lijst = []
-#     for i in range(0,aantal):
-#         dobbelsteen = random.randint(1,6)
-#         witdobbelsteen = [1,1,1,2,2,3]
-#         dobbelsteen_lijst.append(dobbelsteen)
-#         dobbelsteen_lijst.append(witdobbelsteen)
-#     return dobbelsteen_lijst
-
-# print(dobbelsteen(3))
-
 def dobbelstenen():
     blauw_dobbelsteen = random.randint(1,6)
     rood_dobbelsteen = random.randint(1,6)
-    #list shuffled #wit dobbelsteen
     witte_dobbelsteen_list = [1,1,1,2,2,3]
     wit_dobbelsteen = random.choice(witte_dobbelsteen_list)
     return (blauw_dobbelsteen,rood_dobbelsteen,wit_dobbelsteen)
@@ -57,7 +42,7 @@ def lijst_kleur(blauw,rood):
         return "Rood"
     elif rood < blauw:
         return "Blauw"
-    keuzen = input("In welke lijst wil je het hebben? Rood / Blauw:? ").upper()
+    keuzen = input("In welke lijst wil je het hebben? Rood / Blauw:? ").lower()
     return keuzen 
 
 def position_lijst(lijst_kleur,index_1):
@@ -65,29 +50,35 @@ def position_lijst(lijst_kleur,index_1):
         positie = int(input('in welke index van de lijst wil je het hebben.'))
         if blauw_b[positie -1] == "":
            blauw_b[positie -1] = uitkomsten[index_1]
-           checkingtheindex(blauw_b,positie,uitkomsten[index_1])
+        #    checkingtheindex(blauw_b,positie,uitkomsten[index_1])
+
+    elif lijst_kleur == "rood":
+        positie = int(input('in welke index van de lijst wil je het hebben.'))
+        if rood_r[positie -1] == "":
+           rood_r[positie -1] = uitkomsten[index_1]
+        #    checkingtheindex(rood_r,positie,uitkomsten[index_1])
         
         else:
             print("er zit al een waarde in de index.")
             position_lijst(lijst_kleur,index_1)
-
-def checkingtheindex(lijst,index_2,nummer):
-    teller_1 = 1
-    teller_2 = 2
-    while True:
-        if len(lijst) > index_2 + teller_1 and lijst[index_2 + teller_1] =="":
-            teller_1 +=1
-        elif len(lijst) == index_2+teller_1 or lijst [index_2 + teller_1] > nummer:
-            if lijst[index_2 - teller_2] == "":
-                teller_2 +=1
-            elif lijst[index_2 - teller_2] < nummer:
-                return True
-            else:
-                print("dat niet mogelijk")
-                return False          
-        else:
-            print("dat niet mogelijk")
-            return False
+            
+# def checkingtheindex(lijst,index_2,nummer):
+#     teller_1 = 1
+#     teller_2 = 1
+#     while True:
+#         if len(lijst) > index_2 + teller_1 and lijst[index_2 + teller_1] =="":
+#             teller_1 +=1
+#         elif len(lijst) == index_2+teller_1 or lijst [index_2 + teller_1] > nummer:
+#             if lijst[index_2 - teller_2] == "":
+#                 teller_2 +=1
+#             elif lijst[index_2 - teller_2] < nummer:
+#                 return True
+#             else:
+#                 print("dat niet mogelijk")
+#                 return False          
+#         else:
+#             print("dat niet mogelijk")
+#             return False
         
 
 #whileloop
@@ -113,7 +104,9 @@ while active:
     if gekozen_nummer == 2 or gekozen_nummer == 3:
         wit_w[position_w] = wit
         position+=1
-    checkingtheindex(gekozen_lijst,gekozen_nummer,uitkomsten[gekozen_nummer])
+
+        
+    # checkingtheindex(gekozen_lijst,gekozen_nummer,uitkomsten[gekozen_nummer])
     # index = keuzen()
     # uitkomsten[index]
     # keuzen_lijst = lijst_kleur(blauw,rood)
