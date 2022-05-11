@@ -1,0 +1,16 @@
+participants = [[]]
+
+def get_participants(participant_list):
+    while True:
+        name = input("Enter participant name (enter 'next' to go to next pair of participants): ")
+        if name in participant_list[-1]:
+            print("This name has been added already, retry with another name!")
+            continue
+        if name == "next":
+            participant_list.append([])
+            break
+        participant_list[-1].append(name)
+
+while True:
+    get_participants(participants)
+    print(participants)

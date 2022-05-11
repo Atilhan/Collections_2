@@ -14,7 +14,7 @@ def ticket_lottery():
     name_control = []
     name_controle_2 = []
     control = True
-    while control == True:
+    while control:
         ticket_1 = random.choice(tickets)
         ticket_2 = random.choice(tickets)
         straw_pull_1 = ticket_1

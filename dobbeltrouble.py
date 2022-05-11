@@ -48,37 +48,42 @@ def lijst_kleur(blauw,rood):
 def position_lijst(lijst_kleur,index_1):
     if lijst_kleur == "blauw":
         positie = int(input('in welke index van de lijst wil je het hebben.'))
-        if blauw_b[positie -1] == "":
+        if checkingtheindex(blauw_b,positie,uitkomsten[index_1]):
            blauw_b[positie -1] = uitkomsten[index_1]
         #    checkingtheindex(blauw_b,positie,uitkomsten[index_1])
+        else:
+            print("there is already a value in the chosen index")
+            print(blauw_b)
+            position_lijst(lijst_kleur,index_1) 
 
     elif lijst_kleur == "rood":
         positie = int(input('in welke index van de lijst wil je het hebben.'))
-        if rood_r[positie -1] == "":
+        if checkingtheindex(rood_r,positie,uitkomsten[index_1]):
            rood_r[positie -1] = uitkomsten[index_1]
         #    checkingtheindex(rood_r,positie,uitkomsten[index_1])
         
         else:
             print("er zit al een waarde in de index.")
+            print(rood_r)
             position_lijst(lijst_kleur,index_1)
             
-# def checkingtheindex(lijst,index_2,nummer):
-#     teller_1 = 1
-#     teller_2 = 1
-#     while True:
-#         if len(lijst) > index_2 + teller_1 and lijst[index_2 + teller_1] =="":
-#             teller_1 +=1
-#         elif len(lijst) == index_2+teller_1 or lijst [index_2 + teller_1] > nummer:
-#             if lijst[index_2 - teller_2] == "":
-#                 teller_2 +=1
-#             elif lijst[index_2 - teller_2] < nummer:
-#                 return True
-#             else:
-#                 print("dat niet mogelijk")
-#                 return False          
-#         else:
-#             print("dat niet mogelijk")
-#             return False
+def checkingtheindex(lijst,index_2,nummer):
+    teller_1 = 1
+    teller_2 = 1
+    while True:
+        if len(lijst) > index_2 + teller_1 and lijst[index_2 + teller_1] =="":
+            teller_1 +=1
+        elif len(lijst) == index_2+teller_1 or lijst [index_2 + teller_1] > nummer or lijst[index_2 + teller_1 < nummer]:
+            if lijst[index_2 - teller_2] == "":
+                teller_2 +=1
+            elif lijst[index_2 - teller_2] < nummer:
+                return True
+            else:
+                print("dat niet mogelijk")
+                return False          
+        else:
+            print("dat niet mogelijk")
+            return False
         
 
 #whileloop
